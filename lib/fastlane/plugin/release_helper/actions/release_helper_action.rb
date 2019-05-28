@@ -15,6 +15,7 @@ module Fastlane
       end
       
       def self.run(params)
+        UI.message("Inside plugin123")
         hash = "HEAD"
         version = "0.0.0"
 
