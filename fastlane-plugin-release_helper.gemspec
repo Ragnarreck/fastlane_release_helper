@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.email         = 'artem.ivanov@axispoint.com'
 
   spec.summary       = 'release heper'
-  # spec.homepage      = "https://github.com/Ragnarreck/fastlane_release_helper.git"
+  spec.homepage      = "https://github.com/Ragnarreck/fastlane_release_helper.git"
   spec.license       = "MIT"
 
   spec.files         = Dir["lib/**/*"] + %w(README.md LICENSE)
