@@ -58,11 +58,24 @@ module Fastlane
 
       def self.available_options
         [
-          # FastlaneCore::ConfigItem.new(key: :your_option,
-          #                         env_name: "RELEASE_HELPER_YOUR_OPTION",
-          #                      description: "A description of your option",
-          #                         optional: false,
-          #                             type: String)
+          FastlaneCore::ConfigItem.new(
+            key: :match,
+            description: "Match parameter of git describe. See man page of git describe for more info",
+            verify_block: proc do |value|
+              UI.user_error!("No match for analyze_commits action given, pass using `match: 'expr'`") unless value && !value.empty?
+            end
+          ),
+          FastlaneCore::ConfigItem.new(
+            key: :releases,
+            description: "Map types of commit to release (major, minor, patch)",
+            default_value: { fix: "patch", feat: "minor" },
+            type: Hash
+          ),
+          FastlaneCore::ConfigItem.new(
+            key: :tag_version_match,
+            description: "To parse version number from tag name",
+            default_value: '\d+\.\d+\.\d+'
+          )
         ]
       end
 
