@@ -37,7 +37,7 @@ module Fastlane
 
           version = parsed_version[0]
           UI.message(version)
-          Helper::ReleaseHelperHelper.get_commits_from_hash(hash: message[:match])
+          Helper::ReleaseHelperHelper.get_commits_from_hash(hash: params[:match])
         end
       end
 
