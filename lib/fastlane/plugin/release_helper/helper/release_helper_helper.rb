@@ -14,11 +14,11 @@ module Fastlane
       end
 
       def self.parse_commit(params) 
-       "efwgo"
+        UI.message(params)
       end
 
       def self.show_message
-        "Hello from the release_helper plugin helper!"
+        UI.message("Hello from the release_helper plugin helper!")
       end
     end
   end
