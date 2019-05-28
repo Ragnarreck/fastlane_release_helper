@@ -1,5 +1,5 @@
 module Fastlane
   module ReleaseHelper
-    VERSION = "0.1.3"
+    VERSION = "0.1.20"
   end
 end
