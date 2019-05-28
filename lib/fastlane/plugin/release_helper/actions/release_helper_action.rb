@@ -3,6 +3,7 @@ require_relative '../helper/release_helper_helper'
 
 module Fastlane
   module Actions
+    UI = FastlaneCore::UI unless Fastlane.const_defined?("UI")
     class ReleaseHelperAction < Action
       def self.get_last_tag(params)
         command = "git describe --tags --match=#{params[:match]}"
