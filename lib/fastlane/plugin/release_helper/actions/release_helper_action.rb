@@ -13,12 +13,6 @@ module Fastlane
         commits = Helper::ReleaseHelperHelper.git_log('%s|%b', params[:version])
         commits.split("\n")
       end
-
-      # def self.parse_all_commits(params) 
-      #   params[:commits].each do |commit|
-      #     Helper::ReleaseHelperHelper.parse_commit(commit)
-      #   end
-      # end
       
       def self.run(params)
         UI.message("Inside plugin123")
@@ -43,7 +37,7 @@ module Fastlane
 
           version = parsed_version[0]
           commits = get_commits_from_version(version: version)
-          # parse_all_commits(commits: commits)
+          UI.message(commits)
         end
       end
 

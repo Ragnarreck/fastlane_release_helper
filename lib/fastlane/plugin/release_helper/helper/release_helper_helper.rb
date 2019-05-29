@@ -14,15 +14,11 @@ module Fastlane
       end
 
       def self.parse_commit(params) 
-        # UI.message(params)
+        UI.message(params)
       end
 
       def self.show_message
         UI.message("Hello from the release_helper plugin helper!")
-      end
-
-      def self.parse_commit(params)
-        commit = params[:commit]
       end
     end
   end
