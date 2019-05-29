@@ -43,7 +43,7 @@ module Fastlane
 
           version = parsed_version[0]
           commits = get_commits_from_version(version: version)
-          parse_all_commits(commits: commits)
+          # parse_all_commits(commits: commits)
         end
       end
 
