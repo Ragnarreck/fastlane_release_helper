@@ -36,8 +36,8 @@ module Fastlane
           end
 
           version = parsed_version[0]
-          commits = get_commits_from_hash(hash: version)
-          UI.message(commits)
+          # commits = get_commits_from_hash(hash: version)
+          UI.message(version)
         end
       end
 
