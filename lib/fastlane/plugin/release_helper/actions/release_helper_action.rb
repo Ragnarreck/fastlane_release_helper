@@ -38,7 +38,7 @@ module Fastlane
           version = parsed_version[0]
           UI.message(version)
           last_tag = get_last_tag(match: params[:match])
-          UI.message(get_commits_from_hash(hash: last_tag))
+          UI.message(last_tag)
         end
       end
 
