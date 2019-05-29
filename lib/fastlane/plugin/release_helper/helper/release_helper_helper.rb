@@ -14,7 +14,7 @@ module Fastlane
       end
 
       def self.parse_commit(params) 
-        UI.message(params)
+        # UI.message(params)
       end
 
       def self.show_message
@@ -23,7 +23,6 @@ module Fastlane
 
       def self.parse_commit(params)
         commit = params[:commit]
-        UI.message(commit)
       end
     end
   end
