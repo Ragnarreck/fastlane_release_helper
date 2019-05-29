@@ -10,8 +10,9 @@ module Fastlane
       end
 
       def self.get_commits_from_hash(params) 
-        commits = Helper::ReleaseHelperHelper.git_log('%s|%b', params[:hash])
-        commits.split("\n")
+        # commits = Helper::ReleaseHelperHelper.git_log('%s|%b', params[:hash])
+        # commits.split("\n")
+        UI.message('commits is OK')
       end
       
       def self.run(params)
@@ -36,7 +37,7 @@ module Fastlane
           end
 
           version = parsed_version[0]
-          # commits = get_commits_from_hash(hash: version)
+          commits = get_commits_from_hash(hash: version)
           UI.message(version)
         end
       end
