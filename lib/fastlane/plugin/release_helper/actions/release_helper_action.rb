@@ -9,9 +9,14 @@ module Fastlane
         Actions.sh(command, log: false)
       end
 
-      def self.get_commits_from_hash(params) 
-        commits = Helper::ReleaseHelperHelper.git_log('%s|%b', params[:hash])
+      def self.get_commits_from_version(params) 
+        commits = Helper::ReleaseHelperHelper.git_log('%s|%b', params[:version])
         commits.split("\n")
+      end
+
+      def self.parse_all_commits(params) 
+        params[:commits].each do |commit|
+          Helper::ReleaseHelperHelper.parse_commit(commit)
       end
       
       def self.run(params)
@@ -36,9 +41,8 @@ module Fastlane
           end
 
           version = parsed_version[0]
-          UI.message(version)
-          last_tag = get_last_tag(match: params[:match])
-          UI.message(last_tag)
+          commits = get_commits_from_version(version: version)
+          parse_all_commits(commits: commits)
         end
       end
 
