@@ -14,11 +14,11 @@ module Fastlane
         commits.split("\n")
       end
 
-      def self.parse_all_commits(params) 
-        params[:commits].each do |commit|
-          Helper::ReleaseHelperHelper.parse_commit(commit)
-        end
-      end
+      # def self.parse_all_commits(params) 
+      #   params[:commits].each do |commit|
+      #     Helper::ReleaseHelperHelper.parse_commit(commit)
+      #   end
+      # end
       
       def self.run(params)
         UI.message("Inside plugin123")
